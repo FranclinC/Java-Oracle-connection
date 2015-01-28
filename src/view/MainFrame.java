@@ -52,13 +52,13 @@ public class MainFrame extends JFrame {
 		panel.setLayout(null);
 
 		// label -> inserir
-		JButton insertBtnClient = new JButton("Inserir Cliente");
+		JButton insertBtnClient = new JButton(Messages.getString("MainFrame.0")); //$NON-NLS-1$
 		insertBtnClient.addActionListener(new ActionBtnInsert());
 		insertBtnClient.setBounds(30, 10, 200, 100);
 		panel.add(insertBtnClient);
 
 		// label -> search
-		JButton searchBtnClient = new JButton("Buscar Cliente");
+		JButton searchBtnClient = new JButton(Messages.getString("MainFrame.1")); //$NON-NLS-1$
 		searchBtnClient.setBounds(30, 110, 200, 100);
 		panel.add(searchBtnClient);
 

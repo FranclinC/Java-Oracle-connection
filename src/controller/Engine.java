@@ -14,10 +14,10 @@ import model.Client;
 
 public class Engine {
 
-	static final String driver = "oracle.jdbc.driver.OracleDriver";
-	static final String password = ""; // local password
-	static final String URL = "jdbc:oracle:thin:hr/hr@localhost:1521/XE";
-	static final String username = "system";
+	static final String driver = Messages.getString("Engine.0"); //$NON-NLS-1$
+	static final String password = Messages.getString("Engine.1"); // local password //$NON-NLS-1$
+	static final String URL = Messages.getString("Engine.2"); //$NON-NLS-1$
+	static final String username = Messages.getString("Engine.3"); //$NON-NLS-1$
 
 	public static Connection connectToDatabase(String username, String password)
 			throws ClassNotFoundException {
@@ -39,23 +39,23 @@ public class Engine {
 	public void insert(Client c) throws SQLException, ClassNotFoundException {
 
 		int ID = 30;
-		String cpf_Func = "510.362.857-78";
+		String cpf_Func = Messages.getString("Engine.4"); //$NON-NLS-1$
 		Connection con = connectToDatabase(username, password);
 		Statement stmt = con.createStatement();
 
-		String i = "INSERT INTO tb_cliente VALUES(tp_cliente('"
+		String i = Messages.getString("Engine.5") //$NON-NLS-1$
 				+ c.getCpf()
-				+ "', '"
+				+ Messages.getString("Engine.6") //$NON-NLS-1$
 				+ c.getName()
-				+ "', '"
+				+ Messages.getString("Engine.7") //$NON-NLS-1$
 				+ c.getDate()
-				+ "', EMPTY_BLOB(), tp_contato('"
+				+ Messages.getString("Engine.8") //$NON-NLS-1$
 				+ c.getEmail()
-				+ "',  tp_va_telefones(tp_telefone('81', '"
+				+ Messages.getString("Engine.9") //$NON-NLS-1$
 				+ c.getPhone()
-				+ "'))),(SELECT REF(e) FROM tb_endereco e WHERE e.id_endereco = "
-				+ ID + "), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf ='"
-				+ cpf_Func + " ')));";
+				+ Messages.getString("Engine.10") //$NON-NLS-1$
+				+ ID++ + Messages.getString("Engine.11") //$NON-NLS-1$
+				+ cpf_Func + Messages.getString("Engine.12"); //$NON-NLS-1$
 
 		stmt.executeQuery(i);
 		stmt.close();
