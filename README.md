@@ -1,4 +1,4 @@
-Conectividade-com-JDBC
+Java-Oracle-connection
 ======================
 
 Application that allows entering and accessing multimedia data in Oracle database.

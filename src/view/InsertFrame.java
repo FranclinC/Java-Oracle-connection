@@ -57,7 +57,7 @@ public class InsertFrame {
 		cpf.setColumns(15);
 		cpf.setBounds(10, 80, 178, 20);
 		frame.getContentPane().add(cpf);
-		
+
 		// label -> date
 		date = new JTextField();
 		date.setText("Data de Nascimento");
@@ -109,7 +109,7 @@ public class InsertFrame {
 						date.getText(), email.getText(), telefones);
 
 				try {
-					in.Insert(novoCliente);
+					in.insert(novoCliente);
 				} catch (ClassNotFoundException e1) {
 					e1.printStackTrace();
 				} catch (SQLException e1) {

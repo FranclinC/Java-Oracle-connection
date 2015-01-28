@@ -8,8 +8,8 @@ import view.MainFrame;
  */
 
 public class MainApp {
-	
-	//up new MainFrame
+
+	// up new MainFrame
 	public static void main(String[] args) {
 		MainFrame.main(args);
 	}

@@ -15,15 +15,16 @@ import javax.swing.border.EmptyBorder;
  */
 public class MainFrame extends JFrame {
 
-	static class ActionBtnInsert implements ActionListener{
+	static class ActionBtnInsert implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			new InsertFrame();
-		}	
+		}
 	}
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
@@ -37,11 +38,11 @@ public class MainFrame extends JFrame {
 			}
 		});
 	}
-	
+
 	private JPanel panel;
 
 	public MainFrame() {
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 250, 260);
 		setLocationRelativeTo(null);
@@ -49,23 +50,23 @@ public class MainFrame extends JFrame {
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panel);
 		panel.setLayout(null);
-		
-		//label -> inserir
+
+		// label -> inserir
 		JButton insertBtnClient = new JButton("Inserir Cliente");
 		insertBtnClient.addActionListener(new ActionBtnInsert());
 		insertBtnClient.setBounds(30, 10, 200, 100);
 		panel.add(insertBtnClient);
-		
-		//label -> search
+
+		// label -> search
 		JButton searchBtnClient = new JButton("Buscar Cliente");
 		searchBtnClient.setBounds(30, 110, 200, 100);
 		panel.add(searchBtnClient);
-		
+
 		searchBtnClient.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SearchFrame();
 			}
-		});	
+		});
 	}
 }

@@ -15,9 +15,9 @@ import model.Client;
 public class Engine {
 
 	static final String driver = "oracle.jdbc.driver.OracleDriver";
+	static final String password = ""; // local password
 	static final String URL = "jdbc:oracle:thin:hr/hr@localhost:1521/XE";
 	static final String username = "system";
-	static final String password = ""; // local password
 
 	public static Connection connectToDatabase(String username, String password)
 			throws ClassNotFoundException {
@@ -36,14 +36,12 @@ public class Engine {
 		return con;
 	}
 
-	public void Insert(Client c) throws SQLException, ClassNotFoundException {
+	public void insert(Client c) throws SQLException, ClassNotFoundException {
 
-		int count_id = 30;
+		int ID = 30;
+		String cpf_Func = "510.362.857-78";
 		Connection con = connectToDatabase(username, password);
 		Statement stmt = con.createStatement();
-
-		int ID = count_id++;
-		String cpf_Func = "510.362.857-78";
 
 		String i = "INSERT INTO tb_cliente VALUES(tp_cliente('"
 				+ c.getCpf()
