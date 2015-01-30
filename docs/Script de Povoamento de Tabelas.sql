@@ -1,11 +1,11 @@
 --INSERT INTO tb_lente_oftalmica VALUES(tp_lente_oftalmica('uyova',NULL,312.59,'LEN',  tp_nt_promocoes(), 'dir',2.20,'entregue', 'degressiva'));-->
---endereÃ§os
+--enderecos
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Casa Branca', 60, NULL, '51170-140', 'Imbiribeira', 'Recife', 'PE'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Jose de Alencar', 160 , NULL, '51000-140', 'Boa Viagem', 'Recife', 'PE'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Borboletas Psicodelicas', 222, NULL, '4132-140', 'Jabaquara', 'Sao Paulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Verao do Cometa', 232, 'Apt. 23', '51252-365','Itaquera', 'Sao Paulo', 'SP'));
-INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Travessa Canastrao Excentrica', 323, NULL, '45869-210', 'Itaquera', 'Sao Paulo', 'SP'));
-INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Viagem ao Cabu', 88, NULL, '54544-488', 'Itaquera', 'Sao Paulo', 'SP'));
+INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Travessa Canastra Excentrica', 323, NULL, '45869-210', 'Itaquera', 'Sao Paulo', 'SP'));
+INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Viagem ao Ceu', 88, NULL, '54544-488', 'Itaquera', 'Sao Paulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Anita Garibaldi', 76, 'Bloco D, casa 50', '78151-156', 'Imbiribeira' , 'Capao Redondo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Carlota Luisa De Jesus', 50, NULL, '03086-060', 'Parque Sao Jorge', 'SaoPaulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Carlota Luisa De Jesus', 54, NULL, '03086-060', 'Parque Sao Jorge', 'Sao Paulo', 'SP'));
@@ -16,13 +16,13 @@ INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Carlot
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Carlota Luisa De Jesus', 502, 'Apt34', '03086-060', 'Parque Sao Jorge', 'Sao Paulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Carlota Luisa De Jesus', 502, 'Apt54', '03086-060', 'Parque Sao Jorge', 'Sao Paulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua 51', 51, NULL, '22245-678', 'ABC', 'Cabrobo', 'PE'));
---EndereÃ§os do fornecedor Fornecedor
+--enderecos do fornecedor Fornecedor
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Bom Pastor', 11, NULL, '55940-000', 'centro', 'Condado', 'PE'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Dilma Rousseff', 13, 'coligado ao PT', '55941-000', 'Novo Condado', 'Recife', 'PE'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Aecio Neves', 45, '#mudancasJA', '55942-000', 'Morada da pala', 'Goiana', 'PB'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Eduardo Jorge', 40, 'QUERO!', '55661-000', 'centro', 'Sao Paulo', 'SP'));
 INSERT INTO tb_endereco VALUES (tp_endereco(seq_id_endereco.nextval, 'Rua Luciana Genro', 50, NULL, '12345-678', 'centro', 'Joao Pessoa', 'PB'));
---Fim endereÃ§os
+--Fim enderecos
 
 --Cargo
 INSERT INTO tb_cargo VALUES (tp_cargo(seq_id_cargo.nextval, 'Secretaria', 820.00));
@@ -132,10 +132,9 @@ INSERT INTO tb_compra VALUES (tp_compra(to_date('6/10/14' , 'dd/mm/yy'), 9, (SEL
 INSERT INTO tb_compra VALUES (tp_compra(to_date('15/10/14' , 'dd/mm/yy'), 11, (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '659.573.052-73'), ((SELECT REF(c) FROM tb_campanha c WHERE c.id_produto = 6) UNION (SELECT REF(m) FROM tb_material m WHERE m.id_produto = 6))));
 --Fim compra
 
---PromoÃ§Ã£o
+--Promocao
 INSERT INTO tb_promocao VALUES (tp_promocao(to_date('18/03/2014' , 'dd/mm/yy'), to_date('20/12/2014' , 'dd/mm/yy'), 0.2, ((SELECT REF(c) FROM tb_campanha c WHERE c.id_produto = 1) UNION (SELECT REF(m) FROM tb_material m WHERE m.id_produto = 1))));
 INSERT INTO tb_promocao VALUES (tp_promocao(to_date('10/10/2014' , 'dd/mm/yy'), to_date('13/10/2014' , 'dd/mm/yy'), 0.4, ((SELECT REF(c) FROM tb_campanha c WHERE c.id_produto = 4) UNION (SELECT REF(m) FROM tb_material m WHERE m.id_produto = 4))));
 INSERT INTO tb_promocao VALUES (tp_promocao(to_date('21/11/2014' , 'dd/mm/yy'), to_date('22/12/2014' , 'dd/mm/yy'), 0.3, ((SELECT REF(c) FROM tb_campanha c WHERE c.id_produto = 9) UNION (SELECT REF(m) FROM tb_material m WHERE m.id_produto = 9))));
 INSERT INTO tb_promocao VALUES (tp_promocao(to_date('23/12/2014' , 'dd/mm/yy'), to_date('02/01/2015' , 'dd/mm/yy'), 0.6, ((SELECT REF(c) FROM tb_campanha c WHERE c.id_produto = 11) UNION (SELECT REF(m) FROM tb_material m WHERE m.id_produto = 11))));
---Fim promoÃ§Ã£o
-
+--Fim Promocao

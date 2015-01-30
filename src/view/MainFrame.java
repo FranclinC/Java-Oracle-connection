@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,18 +50,19 @@ public class MainFrame extends JFrame {
 		panel = new JPanel();
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panel);
+		getContentPane().setBackground(Color.pink); //HUE!
 		panel.setLayout(null);
 
-		// label -> inserir
+		/*--------------------LABEL SECTION--------------------*/
 		JButton insertBtnClient = new JButton(Messages.getString("MainFrame.0")); //$NON-NLS-1$
 		insertBtnClient.addActionListener(new ActionBtnInsert());
 		insertBtnClient.setBounds(30, 10, 200, 100);
 		panel.add(insertBtnClient);
 
-		// label -> search
 		JButton searchBtnClient = new JButton(Messages.getString("MainFrame.1")); //$NON-NLS-1$
 		searchBtnClient.setBounds(30, 110, 200, 100);
 		panel.add(searchBtnClient);
+		/*--------------------END SECTION--------------------*/
 
 		searchBtnClient.addActionListener(new ActionListener() {
 			@Override

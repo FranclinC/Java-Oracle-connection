@@ -33,7 +33,7 @@ create sequence seq_id_cargo increment by 1 start with 1;
 create sequence seq_id_produto increment by 1 start with 1;
 create sequence seq_id_midia increment by 1 start with 1;
 
---criaÃ§Ã£o de tipos
+--criação de tipos
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT(
 	id_endereco			INTEGER,
 	logradouro			VARCHAR2(60),
@@ -67,10 +67,28 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT(
 	endereco 			REF tp_endereco)NOT FINAL NOT INSTANTIABLE;
 /
 
+CREATE OR REPLACE TYPE tp_cargo AS OBJECT(
+	id_cargo			INTEGER,
+	funcao				VARCHAR2(20),
+	salario				NUMBER(8,2));
+/
+
+CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa(
+	data_inicio			DATE,
+	data_fim			DATE,
+	cargo 				REF tp_cargo,
+	supervisor			REF tp_funcionario);
+/
+
 CREATE OR REPLACE TYPE tp_cliente UNDER tp_pessoa(
 	funcionario 		REF tp_funcionario
 );
 /
+
+CREATE OR REPLACE TYPE tp_nt_clientes AS TABLE OF tp_cliente;
+/
+
+ALTER TYPE tp_funcionario ADD ATTRIBUTE lista_clientes tp_nt_clientes CASCADE;
 
 CREATE OR REPLACE TYPE tp_fornecedor AS OBJECT(
 	cnpj				VARCHAR2(18),
@@ -93,24 +111,6 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT(
 	data_fimP			DATE,
 	desconto			NUMBER(8,2),
 	produto 			REF tp_produto);
-/
-
---cargo e funcionario
-CREATE OR REPLACE TYPE tp_cargo AS OBJECT(
-	id_cargo			INTEGER,
-	funcao				VARCHAR2(20),
-	salario				NUMBER(8,2));
-/
-
-CREATE OR REPLACE TYPE tp_nt_clientes AS TABLE OF tp_cliente;
-/
-
-CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa(
-	data_inicio			DATE,
-	data_fim			DATE,
-	cargo 				REF tp_cargo,
-	supervisor			REF tp_funcionario,
-	lista_clientes		tp_nt_clientes);
 /
 
 --midia e campanha

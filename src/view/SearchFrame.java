@@ -46,7 +46,8 @@ public class SearchFrame {
 		button.setBounds(198, 63, 89, 23);
 		frame.getContentPane().add(button);
 
-		JLabel lblBuscarCliente = new JLabel(Messages.getString("SearchFrame.4")); //$NON-NLS-1$
+		JLabel lblBuscarCliente = new JLabel(
+				Messages.getString("SearchFrame.4")); //$NON-NLS-1$
 		lblBuscarCliente.setBounds(10, 11, 125, 14);
 		frame.getContentPane().add(lblBuscarCliente);
 

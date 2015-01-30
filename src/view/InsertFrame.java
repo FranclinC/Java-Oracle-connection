@@ -38,8 +38,10 @@ public class InsertFrame {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 
-		JLabel lblBuscarCliente = new JLabel(Messages.getString("InsertFrame.1")); //$NON-NLS-1$
-		lblBuscarCliente.setFont(new Font(Messages.getString("InsertFrame.2"), Font.PLAIN, 18)); //$NON-NLS-1$
+		JLabel lblBuscarCliente = new JLabel(
+				Messages.getString("InsertFrame.1")); //$NON-NLS-1$
+		lblBuscarCliente.setFont(new Font(
+				Messages.getString("InsertFrame.2"), Font.PLAIN, 18)); //$NON-NLS-1$
 		lblBuscarCliente.setBounds(10, 10, 227, 14);
 		frame.getContentPane().add(lblBuscarCliente);
 
@@ -94,7 +96,8 @@ public class InsertFrame {
 		frame.getContentPane().add(phone3);
 		/*--------------------END SECTION--------------------*/
 
-		JButton clientBtnInsert = new JButton(Messages.getString("InsertFrame.10")); //$NON-NLS-1$
+		JButton clientBtnInsert = new JButton(
+				Messages.getString("InsertFrame.10")); //$NON-NLS-1$
 
 		clientBtnInsert.addActionListener(new ActionListener() {
 			@Override

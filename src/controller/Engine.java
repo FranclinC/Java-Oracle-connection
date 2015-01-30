@@ -44,16 +44,11 @@ public class Engine {
 		Statement stmt = con.createStatement();
 
 		String i = Messages.getString("Engine.5") //$NON-NLS-1$
-				+ c.getCpf()
-				+ Messages.getString("Engine.6") //$NON-NLS-1$
-				+ c.getName()
-				+ Messages.getString("Engine.7") //$NON-NLS-1$
-				+ c.getDate()
-				+ Messages.getString("Engine.8") //$NON-NLS-1$
-				+ c.getEmail()
-				+ Messages.getString("Engine.9") //$NON-NLS-1$
-				+ c.getPhone()
-				+ Messages.getString("Engine.10") //$NON-NLS-1$
+				+ c.getCpf() + Messages.getString("Engine.6") //$NON-NLS-1$
+				+ c.getName() + Messages.getString("Engine.7") //$NON-NLS-1$
+				+ c.getDate() + Messages.getString("Engine.8") //$NON-NLS-1$
+				+ c.getEmail() + Messages.getString("Engine.9") //$NON-NLS-1$
+				+ c.getPhone() + Messages.getString("Engine.10") //$NON-NLS-1$
 				+ ID++ + Messages.getString("Engine.11") //$NON-NLS-1$
 				+ cpf_Func + Messages.getString("Engine.12"); //$NON-NLS-1$
 
