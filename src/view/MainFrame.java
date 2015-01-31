@@ -23,6 +23,14 @@ public class MainFrame extends JFrame {
 			new InsertFrame();
 		}
 	}
+	
+	static class ActionBtnSearch implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			new SearchFrame();
+		}
+	}
 
 	private static final long serialVersionUID = 1L;
 
@@ -60,15 +68,9 @@ public class MainFrame extends JFrame {
 		panel.add(insertBtnClient);
 
 		JButton searchBtnClient = new JButton(Messages.getString("MainFrame.1")); //$NON-NLS-1$
+		searchBtnClient.addActionListener(new ActionBtnSearch());
 		searchBtnClient.setBounds(30, 110, 200, 100);
 		panel.add(searchBtnClient);
 		/*--------------------END SECTION--------------------*/
-
-		searchBtnClient.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new SearchFrame();
-			}
-		});
 	}
 }
